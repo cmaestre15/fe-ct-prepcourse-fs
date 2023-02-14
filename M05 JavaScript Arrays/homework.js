@@ -113,8 +113,22 @@ function multiplicarArgumentos() {
    // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
    // [PISTA]: "arguments" es un arreglo.
    // Tu código:
+   if(arguments.length === 1){
+      return arguments[0];
 
+   }else if( arguments.length === 0){
+
+      return 0;
+   }else
+   var producto=1;
+
+   for (i=0;i<arguments.length;i++)
+      producto*=arguments[i];
+   return producto;
 }
+   
+
+
 
 function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
@@ -148,12 +162,33 @@ function empiezaConNueve(num) {
    // Esta función recibe por parámetro un número.
    // Debe retornar true si el entero inicia con 9 y false en otro caso.
    // Tu código:
+
+   var array = num.toString();
+
+   arrayseparado = array.split('');
+
+   if (arrayseparado[0]==='9'){
+      return true;
+   }else
+   return false;
 }
 
 function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:
+   var comparar = array[0];
+   var suma = true;
+
+for(var i=0; i<array.length; i++){
+
+    if(comparar !== array[i]){
+    suma = false;
+       break;
+    }
+}
+return(suma);
+
 }
 
 function mesesDelAño(array) {
@@ -161,25 +196,58 @@ function mesesDelAño(array) {
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
+   var tabla = [];
+   array.forEach(element => {
+   if(element ==="Enero" || element ==="Marzo" || element ==="Noviembre"){
+      tabla.push(element);
+      
+   }
+    
+   
+  });
+  
+  if (tabla.length<3){
+   return ("No se encontraron los meses pedidos");
+  }else return (tabla);
+
+
 }
 
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
-   var tabla =[];
-   var i = 0;
-   for (i=0;i==9;i++){
-      a= 6*i;
-      tabla.push(a); 
-   }
+   var tabla = [];
+
+for(var i=0;i<=10;i++){
+
+    tabla.push(i*6);
+   
+}
+
+return(tabla);
+
 }
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   var tabla = [];
+   array.forEach(element => {
+   if(element >100){
+      tabla.push(element);
+      
+   }
+
+   
+  });
+  return (tabla);
+
+
 }
+
+
 
 /* ----------------------------------------------------------------------------------
 💪 EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT  EXTRA CREDIT 💪
@@ -192,6 +260,17 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   var arrayRe = [];
+   for(var i=0; i<10;i++){
+      num = num +2;
+      arrayRe.push(num);
+      if(num == i){
+         return ("Se interrumpió la ejecución");
+         break ;
+      }
+   }
+   return arrayRe;
+
 }
 
 function continueStatement(num) {
@@ -201,6 +280,19 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+
+   var arrayRe = [];
+   for(var i=0; i<10;i++){
+      if(i == 5){
+         
+         continue ;
+      }
+      num = num +2;
+      arrayRe.push(num);
+      
+   }
+   return arrayRe;
+
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
